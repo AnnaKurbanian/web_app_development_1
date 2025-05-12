@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block title %}orm_abc_app:var_list_dict{% endblock %}
+
+
+{% block content %}
+    <h5>Мои  курсы</h5>
+    <p> Мои текущие курсы: {{ var_main }}</p>
+    <p>Названия текущих курсов: {{ list_main }}</p>
+    <p>Компетенции по предмету: {{ list_main.1 }}</p>
+    <ul>
+        <li>Таргетирование инфляции</li>
+        <li>Межвременной выбор</li>
+        <li>Кривая Филлипса</li>
+        <li>Кейнсианская экономика</li>
+<!--        {% for value in list_main %}-->
+<!--            {% if  value == var_main %}-->
+<!--                <li>true: {{ value }}-->
+<!--                    {% else %}-->
+<!--                <li>else: {{ value }}-->
+<!--            {% endif %}-->
+        {% endfor %}
+    </ul>
+
+    <p>Мои оценки по прошедшим курсам</p>
+    <ul>
+        <li>{{ dict_main }}
+        <li>{{ dict_main.x }}
+        <li>{{ dict_main.y }}
+            <ul>
+                {% for key, value in dict_main.items %}
+                    <li>{{ key }}: {{ value }}
+<!--                    {% if value == var_main %} - true_value-->
+<!--                    {% else %} - false_value-->
+<!--                    {% endif %}-->
+                {% endfor %}
+            </ul>
+    </ul>
+{% endblock %}
+
